@@ -1,25 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+import React from "react";
+import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
+import Swap from "./components/Swap";
+import Header from "./components/Header";
+import { DAppProvider } from "@usedapp/core";
+import { Global, css } from "@emotion/react";
+import theme from "./theme";
+const GlobalStyles = css`
+  /*
+    This will hide the focus indicator if the element receives focus via the mouse,
+    but it will still show up on keyboard focus.
+  */
+    .js-focus-visible :focus:not([data-focus-visible-added]) {
+    outline: none;
+    box-shadow: none;
+  }
+`;
+
+
+//apply GlobalStyles to app:
+
+const App = () => (
+  <DAppProvider config={{}}>
+    <ChakraProvider resetCSS>
+      <Global styles={GlobalStyles} />
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <Header />
+      <div>
+        <h1>ArbiterSwap v1</h1>
+        <Swap />
+      </div>
+    </ChakraProvider>
+  </DAppProvider>
   );
-}
 
 export default App;
