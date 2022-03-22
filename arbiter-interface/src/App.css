@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  color:white;
 }
 
 .App-logo {
@@ -28,6 +29,10 @@
   color: #61dafb;
 }
 
+.TokenList{
+  text-align: left;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +41,51 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  text-align:center;
+  color: #f5f0f6ff;
+}
+
+table {
+    table-layout: fixed;
+    white-space: nowrap;
+    justify-content: left;
+    border: 0px solid gray;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td {
+    border: 1px solid gray;
+    text-align: center;
+  }
+  thead th:nth-child(1){
+    align-items: center;
+    width:3%;
+  }
+  thead th:nth-child(2){
+    width:5%;
+    text-align:center;
+  }
+  thead th:nth-child(3){
+    width:20%;
+  }
+  thead th:nth-child(4){
+    width:5%;
+  }
+  th, td {
+    padding: 2px;
+  }
+
+  h1 {
+    font-size: '100';
+  }
+  .App-Link:hover{
+      border: "1px";
+      border-style: "solid";
+      border-color: "teal";
+      background-color: "teal";
+  }
